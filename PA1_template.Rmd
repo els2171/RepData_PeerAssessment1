@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## R Markdown for Reproducible Research: Peer Assessment 1 on wearable data.
 
-**Loading and prepocessing the data.
+###Loading and prepocessing the data.
 
 Load the necessary packages.
 
@@ -31,7 +31,7 @@ head(activity)
 str(activity)
 ```
 
-**What is the mean total number of steps taken per day?
+###What is the mean total number of steps taken per day?
 
 Group the activity data by date, then use the summarise() function to determine the number of total steps taken each day.
 
@@ -63,7 +63,7 @@ mediansteps <- median(sumsteps$Total.Steps, na.rm = TRUE)
 print(paste("Median of", mediansteps, "steps taken per day."))
 ```
 
-**What is the average daily activity pattern?
+###What is the average daily activity pattern?
 
 Begin by grouping the data by interval.
 
@@ -96,7 +96,7 @@ print(maxavgint)
 print(paste("The max average step count of", maxavgint$Average.Step.Count, "occurs during the 5-min interval beginning at", maxavgint$Interval, "am."))
 ```
 
-**Imputing missing values
+###Imputing missing values
 
 To calculate the number of rows missing data on step counts, simply sum the number of NA's that occur in the steps column of the original activity data set.
 
@@ -142,7 +142,7 @@ print(paste("Median of", mediansteps2, "steps taken per day."))
 
 The impact that imputation has had on the measures of mean and median appears negligible for this data set. The median has increased by about 0.011%.
 
-**Are there differences in activity patterns between weekdays and weekends?
+###Are there differences in activity patterns between weekdays and weekends?
 
 Let's first create a new column in the imputed data set that designates the weekday of the observation and then convert that into a factor column with two levels: Weekday and Weekend.
 
