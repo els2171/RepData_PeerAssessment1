@@ -2,14 +2,15 @@
 title: "PA1_template"
 author: "Erin Stein"
 date: "December 5, 2016"
-output: html_document
+output: html_document:
+        keep_md: true
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+## R Markdown for Reproducible Research: Peer Assessment 1
 
 **Loading and prepocessing the data.
 
