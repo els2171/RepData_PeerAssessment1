@@ -2,8 +2,7 @@
 title: "PA1_template"
 author: "Erin Stein"
 date: "December 5, 2016"
-output: html_document:
-        keep_md: true
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
