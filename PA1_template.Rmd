@@ -126,7 +126,7 @@ sumsteps2 <- summarise(activity2_bydate, Total.Steps = sum(steps))
 head(sumsteps2)
 
 g2 <- ggplot(sumsteps2, aes(Total.Steps))
-g + geom_histogram(colour = "black", fill = "lightsalmon2") + 
+g2 + geom_histogram(colour = "black", fill = "lightsalmon2") + 
     labs(title = "Histogram of Total Steps per Day- (Imputed)", x = "Total Steps", y = "Count") + 
     geom_vline(xintercept = mean(sumsteps2$Total.Steps, na.rm = TRUE), lwd = 2, colour = "dodgerblue4", linetype = "longdash") + 
     annotate("text", label = "Mean", x = 12100, y = 8, colour = "dodgerblue4") + 
