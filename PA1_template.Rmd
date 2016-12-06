@@ -9,9 +9,10 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown for Reproducible Research: Peer Assessment 1 on wearable data.
+## R Markdown for Reproducible Research: Peer Assessment 1
 
-###Loading and prepocessing the data.
+
+###Loading and prepocessing the data
 
 Load the necessary packages.
 
@@ -29,6 +30,7 @@ activity$date <- as.Date(activity$date)
 head(activity)
 str(activity)
 ```
+
 
 ###What is the mean total number of steps taken per day?
 
@@ -61,6 +63,7 @@ print(paste("Mean of", meansteps, "steps taken per day."))
 mediansteps <- median(sumsteps$Total.Steps, na.rm = TRUE)
 print(paste("Median of", mediansteps, "steps taken per day."))
 ```
+
 
 ###What is the average daily activity pattern?
 
@@ -95,6 +98,7 @@ print(maxavgint)
 print(paste("The max average step count of", maxavgint$Average.Step.Count, "occurs during the 5-min interval beginning at", maxavgint$Interval, "am."))
 ```
 
+
 ###Imputing missing values
 
 To calculate the number of rows missing data on step counts, simply sum the number of NA's that occur in the steps column of the original activity data set.
@@ -108,7 +112,7 @@ We'll need to replace these 2304 missing values. Let's do so by replacing them w
 ```{r, echo = TRUE}
 colnames(avgsteps_int) <- c("interval", "steps")
 activity2 <- full_join(activity, avgsteps_int, by = "interval")
-index <- is.na(activity2$steps)
+index <- is.na(activity2$steps.x)
 activity2 <- within(activity2, steps.x[index] <- steps.y[index])
 activity2 <- select(activity2, steps.x, date, interval)
 colnames(activity2)[1] <- "steps"
@@ -140,6 +144,7 @@ print(paste("Median of", mediansteps2, "steps taken per day."))
 ```
 
 The impact that imputation has had on the measures of mean and median appears negligible for this data set. The median has increased by about 0.011%.
+
 
 ###Are there differences in activity patterns between weekdays and weekends?
 
