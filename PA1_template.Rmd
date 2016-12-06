@@ -10,7 +10,7 @@ output: html_document:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown for Reproducible Research: Peer Assessment 1
+## R Markdown for Reproducible Research: Peer Assessment 1 on wearable data.
 
 **Loading and prepocessing the data.
 
